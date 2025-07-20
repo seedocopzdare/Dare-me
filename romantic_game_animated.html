@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>Romantic Truth or Dare Game</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffe3ec, #ffc3a0);
+      color: #333;
+      text-align: center;
+      padding: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 2.5rem;
+      animation: bounce 1s ease infinite alternate;
+    }
+    .question-box {
+      margin-top: 2rem;
+      background: #fff3f8;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      animation: popIn 1s ease forwards;
+    }
+    button {
+      margin: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #c2185b;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Dangerous Truth or Dare 🔞</h1>
+  <div class="question-box">
+    <p>ഇത് ആകമാന Romantic Truth or Dare Game ആണു! ഓരോ ചോദ്യവും dangerous ആണ് 😏</p>
+    <button onclick="nextQuestion()">👉 ചോദ്യമൊന്ന് കാണിക്കൂ</button>
+    <p id="questionArea" style="margin-top:1rem; font-weight:bold;"></p>
+  </div>
+  <audio id="bgmusic" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+  <script>
+    const questions = [
+      "നിന്റെ phone gallery യിൽ ഉണ്ടായിരുന്ന ഏറ്റവും private photo എന്താണ്?",
+      "നിനക്ക് ആരെയാണ് ഇപ്പോൾ crush?",
+      "ഒരിക്കൽ കുളിക്കാതെ 2 ദിവസം പോയിട്ടുണ്ടോ?",
+      "ഇനി ഞാൻ പറയുന്ന dare ചെയ്യില്ലെങ്കിൽ, sweetheart എന്നെ വിളിക്കണം 3 തവണ 😁",
+      "നിനക്ക് കാമം ഏറിയിരിക്കുന്നു എന്ന് പറഞ്ഞുകൊണ്ട് voice note അയക്കണം (Fake ആകാം 😅)"
+    ];
+    function nextQuestion() {
+      const randIndex = Math.floor(Math.random() * questions.length);
+      document.getElementById("questionArea").innerText = questions[randIndex];
+    }
+  </script>
+</body>
+</html>
